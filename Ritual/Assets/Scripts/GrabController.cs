@@ -3,19 +3,16 @@ using System.Collections;
 
 public class GrabController : MonoBehaviour {
 
-	Transform player, grabPoint, grabStart, grabForward;
-	SphereCollider grabCollider;
+	Transform grabPoint, grabStart, grabForward;
 
 	bool grabbed = false;
 	GameObject grabbedObject;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		grabPoint = transform.FindChild ("GrabPoint");
 		grabForward = transform.FindChild ("GrabForward");
 		grabStart = grabPoint;
-		grabCollider = grabPoint.GetComponent<SphereCollider> ();
 	}
 	
 	// Update is called once per frame
@@ -25,20 +22,22 @@ public class GrabController : MonoBehaviour {
 			if (grabbedObject != null) {
 				grabbed = true;
 				Debug.Log ("Grabbed: " + grabbedObject.name);
+
 				HingeJoint joint = grabbedObject.AddComponent<HingeJoint> ();
 				joint.connectedBody = grabPoint.GetComponent<Rigidbody>();
-				joint.anchor = grabPoint.position;
+				joint.anchor = Vector3.zero;// grabPoint.position;
+				//joint.useSpring = true;
+
 				grabbedObject.layer |= LayerMask.NameToLayer ("Grabbed");
-				Debug.Log ("Layer number: "+LayerMask.NameToLayer("Grabbed"));
 			}
 		}
 
 		if (Input.GetKeyUp (KeyCode.Mouse0) && grabbed) {
-			grabbed = false;
 			Destroy (grabbedObject.GetComponent<HingeJoint> ());
 			grabbedObject.layer = 0;
 
 			grabbedObject = null;
+			grabbed = false;
 		}
 
 		if (grabbed) {
@@ -49,9 +48,11 @@ public class GrabController : MonoBehaviour {
 
 	GameObject GetGrabbableObject(){
 		GameObject obj = null;
-		Debug.DrawRay (grabStart.parent.position, GrabDirection(), Color.blue, 2f);
+		float grabDistance = 2f;
+		Debug.DrawRay (grabStart.parent.position, Vector3.Normalize( GrabDirection()) * grabDistance, Color.blue, 2f);
 
-		RaycastHit[] hits = Physics.SphereCastAll (grabStart.parent.position, 1.5f, GrabDirection());
+		RaycastHit[] hits = Physics.SphereCastAll (grabStart.parent.position, .25f, Vector3.Normalize(GrabDirection()),grabDistance);
+
 		foreach (RaycastHit hit in hits) {
 			if (hit.transform.tag == "Grabbable") {
 				obj = hit.transform.gameObject;
@@ -64,6 +65,6 @@ public class GrabController : MonoBehaviour {
 	}
 
 	Vector3 GrabDirection() {
-		return grabStart.parent.position - grabForward.position;
+		return  grabForward.position - grabStart.parent.position;
 	}
 }
