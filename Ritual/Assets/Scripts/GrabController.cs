@@ -42,6 +42,10 @@ public class GrabController : MonoBehaviour {
 		}
 	}
 
+    public GameObject getGrabbedObject ()
+    {
+        return grabbedObject;
+    }
 
 	public void StopGrab(){
 		Destroy (grabbedObject.GetComponent<HingeJoint> ());
