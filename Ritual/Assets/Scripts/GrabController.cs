@@ -26,18 +26,15 @@ public class GrabController : MonoBehaviour {
 				HingeJoint joint = grabbedObject.AddComponent<HingeJoint> ();
 				joint.connectedBody = grabPoint.GetComponent<Rigidbody>();
 				joint.anchor = Vector3.zero;// grabPoint.position;
-				//joint.useSpring = true;
+				joint.useSpring = true;
+				joint.breakForce = 1000f;
 
 				grabbedObject.layer |= LayerMask.NameToLayer ("Grabbed");
 			}
 		}
 
 		if (Input.GetKeyUp (KeyCode.Mouse0) && grabbed) {
-			Destroy (grabbedObject.GetComponent<HingeJoint> ());
-			grabbedObject.layer = 0;
-
-			grabbedObject = null;
-			grabbed = false;
+			StopGrab ();
 		}
 
 		if (grabbed) {
@@ -45,6 +42,14 @@ public class GrabController : MonoBehaviour {
 		}
 	}
 
+
+	public void StopGrab(){
+		Destroy (grabbedObject.GetComponent<HingeJoint> ());
+		grabbedObject.layer = 0;
+
+		grabbedObject = null;
+		grabbed = false;
+	}
 
 	GameObject GetGrabbableObject(){
 		GameObject obj = null;
