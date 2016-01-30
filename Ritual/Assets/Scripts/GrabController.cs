@@ -68,7 +68,7 @@ public class GrabController : MonoBehaviour {
 		grabbed = false;
 	}
 
-	GameObject GetGrabbableObject(){
+	public GameObject GetGrabbableObject(){
 		GameObject obj = null;
 		float grabDistance = 2f;
 		Debug.DrawRay (grabStart.parent.position, Vector3.Normalize( GrabDirection()) * grabDistance, Color.blue, 2f);

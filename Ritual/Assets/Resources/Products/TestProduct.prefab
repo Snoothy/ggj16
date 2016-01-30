@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adc06fa716b7e34d9dc3d50442eff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRendererForOutline: {fileID: 2371406}
 --- !u!135 &13530212
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -114,6 +115,10 @@ Prefab:
       propertyPath: m_TagString
       value: Grabbable
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: meshRendererForOutline
+      value: 
+      objectReference: {fileID: 2371406}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185536}
