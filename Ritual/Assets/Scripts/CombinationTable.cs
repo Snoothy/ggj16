@@ -25,6 +25,7 @@ public class CombinationTable : MonoBehaviour {
     {
         IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
         Destroy(item.gameObject);
+        postitwall.addIngredient(item);
         addIngredientToCombination(type);
     }
 
@@ -32,7 +33,6 @@ public class CombinationTable : MonoBehaviour {
     {
         currentPool |= item;
         noIngredients++;
-        postitwall.addIngredient(item);
         GameObject product;
         if (isIngredientsAProduct(currentPool, out product))
         {
