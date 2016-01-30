@@ -1095,7 +1095,7 @@ MonoBehaviour:
   combinations:
   - ingredients: 0400000002000000
     product: {fileID: 136470, guid: 86a448d1a8e6dc84896b32f0a9db4eca, type: 2}
-  - ingredients: 000400000002000010000000
+  - ingredients: 000400000002000000400000
     product: {fileID: 122288, guid: 0a8fc5dea137fc24081e712ab11a8933, type: 2}
   - ingredients: 1000000080000000
     product: {fileID: 194534, guid: 53dce814c073f8b4eaff36fbe6cdac3d, type: 2}

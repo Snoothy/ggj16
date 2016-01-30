@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LookAtPlayer : MonoBehaviour {
 
+	public float offset = 0;
+
 	Transform player, t;
 
 	// Use this for initialization
@@ -14,6 +16,6 @@ public class LookAtPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Quaternion q = Quaternion.LookRotation (t.position - player.position);
-		t.rotation = Quaternion.Euler(new Vector3(0f, q.eulerAngles.y, 0f));
+		t.rotation = Quaternion.Euler(new Vector3(0f, q.eulerAngles.y + offset, 0f));
 	}
 }

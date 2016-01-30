@@ -5,6 +5,7 @@ public class ObjectiveTracker : MonoBehaviour {
 
 	public ObjectiveHandler.Objectives type;
 	public Transform attachPoint;
+	public GameObject outline;
 	public Vector3 rotation;
 	ObjectiveHandler handler;
 	GrabController grab;
@@ -30,6 +31,7 @@ public class ObjectiveTracker : MonoBehaviour {
 			grab.StopGrab ();
 			Destroy (other.gameObject.GetComponent<Rigidbody>());
 			other.transform.tag = "Untagged";
+			outline.SetActive(false);
 			completed = true;
 		}
 	}
