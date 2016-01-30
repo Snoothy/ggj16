@@ -7,14 +7,15 @@ using LayerManagement.Action.Infinite;
 public class SuckDownAnimationConfiguration
 {
     public float fromHeight = 0.45f;
+    public float toOut = 0.25f;
     public float rotationSpeed = 45;
     public float downTime = 3;
 }
 
 public class CombinationTable : MonoBehaviour {
 
-    public Transform spawnProductAt;
     public Transform enterPoolParent;
+    public Transform exitPoolParent;
     public Postitwall postitwall;
 
     public List<Combination> combinations = new List<Combination>();
@@ -30,9 +31,9 @@ public class CombinationTable : MonoBehaviour {
 
         if (!addIngredientToCombination(type))
         {
-            placeProduct(item.gameObject);
             item.gameObject.AddComponent<Rigidbody>();
             item.GetComponent<Collider>().enabled = true;
+            placeProduct(item.gameObject);
         } else
         {
             Destroy(item.gameObject);
@@ -176,17 +177,43 @@ public class CombinationTable : MonoBehaviour {
         }
     }
 
-    public void instantiateProduct(GameObject product)
+    private void instantiateProduct(GameObject product)
     {
         Debug.LogWarning("new product" + product.name);
         placeProduct(Instantiate(product));
     }
 
-    public void placeProduct (GameObject product)
+    private void placeProduct (GameObject product)
     {
-        product.transform.parent = null;
-        product.transform.position = spawnProductAt.position;
+        Destroy(product.GetComponent<Rigidbody>());
+        product.GetComponent<Collider>().enabled = false;
+
+        GameObject spinParent = new GameObject("SpinParent");
+        spinParent.transform.parent = exitPoolParent;
+        spinParent.transform.localScale = Vector3.one;
+        spinParent.transform.localRotation = Quaternion.identity;
+        spinParent.transform.localPosition = Vector3.zero;
+
+        product.transform.parent = spinParent.transform;
         product.transform.rotation = Quaternion.identity;
-        product.transform.localScale = Vector3.one;
+        product.transform.localScale = Vector3.zero;
+        product.transform.localPosition = Vector3.zero;
+
+        spinParent.AddComponent<RotateBy>().runActionWith(new RotateByInfo(spinConfigurations.rotationSpeed, new Vector3(0, 1, 0)));
+
+        product.gameObject.AddComponent<MoveToVectorByTime>().runActionWith(new MoveToVectorByTimeInfo(spinConfigurations.downTime, new Vector3(spinConfigurations.toOut,0,0), true, 0));
+        spinParent.AddComponent<MoveToVectorByTime>().runActionWith(new MoveToVectorByTimeInfo(spinConfigurations.downTime, spinParent.transform.position.LayerManagementSetY(spinParent.transform.position.y + this.spinConfigurations.fromHeight*0.5f), false, 0));
+
+        ScaleToByTime scale = product.gameObject.AddComponent<ScaleToByTime>();
+        scale.delegates += a =>
+        {
+            product.gameObject.AddComponent<Rigidbody>();
+            product.GetComponent<Collider>().enabled = true;
+            product.transform.parent = null;
+            Destroy(spinParent);
+            Destroy(product.gameObject.GetComponent<MoveToVectorByTime>());
+            Destroy(a);
+        };
+        scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.one, 0));
     }
 }
