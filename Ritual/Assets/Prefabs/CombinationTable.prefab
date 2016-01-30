@@ -1155,6 +1155,7 @@ MonoBehaviour:
   enterPoolParent: {fileID: 454344}
   exitPoolParent: {fileID: 439520}
   postitwall: {fileID: 11473838}
+  wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
   combinations:
   - ingredients: 0400000002000000
     product: {fileID: 136470, guid: 86a448d1a8e6dc84896b32f0a9db4eca, type: 2}

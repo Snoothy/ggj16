@@ -1311,6 +1311,7 @@ MonoBehaviour:
   attachPoint: {fileID: 1122461121}
   outline: {fileID: 847778523}
   rotation: {x: 0, y: 0, z: 0}
+  wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
 --- !u!136 &437976168
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7283,6 +7284,7 @@ MonoBehaviour:
   attachPoint: {fileID: 1158469165}
   outline: {fileID: 1321974094}
   rotation: {x: 0, y: 0, z: 0}
+  wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
 --- !u!136 &1900155565
 CapsuleCollider:
   m_ObjectHideFlags: 0

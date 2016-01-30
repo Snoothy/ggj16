@@ -9,6 +9,7 @@ public class ObjectiveTracker : MonoBehaviour {
 	public Vector3 rotation;
 	ObjectiveHandler handler;
 	GrabController grab;
+    public AudioClip wrongAnswerClip;
 
 	bool completed = false;
 
@@ -41,6 +42,13 @@ public class ObjectiveTracker : MonoBehaviour {
                 grabController.StopGrab();
             }
             other.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(5, 5, 5), other.transform.position, ForceMode.Impulse);
+            AudioSource audioSource = other.gameObject.GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = other.gameObject.AddComponent<AudioSource>();
+            }
+
+            audioSource.PlayOneShot(wrongAnswerClip, 0.3f);
         }
 	}
 
