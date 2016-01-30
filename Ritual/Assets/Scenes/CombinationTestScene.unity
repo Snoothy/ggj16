@@ -170,7 +170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 896969657}
-  - {fileID: 1294642195}
+  - {fileID: 314681863}
   - {fileID: 826629581}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -187,6 +187,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnProductAt: {fileID: 336722462}
   combinator: {fileID: 707147953}
+  enterPoolParent: {fileID: 314681863}
+  spinConfigurations:
+    fromHeight: 0.45
+    rotationSpeed: 160
+    downTime: 1
 --- !u!1 &298380851
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +267,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &314681862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 314681863}
+  m_Layer: 0
+  m_Name: EnterPoolParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314681863
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314681862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.93, y: 1.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1294642195}
+  m_Father: {fileID: 237217736}
+  m_RootOrder: 1
 --- !u!1 &336722461
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +317,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336722461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 29.7, z: 0}
+  m_LocalPosition: {x: 0, y: 78.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 826629581}
@@ -804,11 +837,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1294642194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.93, y: 1.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.02145925, z: 1}
   m_Children: []
-  m_Father: {fileID: 237217736}
-  m_RootOrder: 1
+  m_Father: {fileID: 314681863}
+  m_RootOrder: 0
 --- !u!114 &1294642196
 MonoBehaviour:
   m_ObjectHideFlags: 0

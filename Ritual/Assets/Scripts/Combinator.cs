@@ -9,37 +9,9 @@ public class Combinator : MonoBehaviour {
     public CombinationTable table;
     public Postitwall postitwall;
 
-	// Use this for initialization
-	void Start () {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    public void addIngredientToCombination(Product item)
+    public void addIngredientToCombination(Item item)
     {
-        GrabController grabController = GameObject.FindObjectOfType<GrabController>();
-        if (grabController.getGrabbedObject() == item.gameObject)
-        {
-            grabController.StopGrab();
-        }
-
-        IngredientType type = IngredientTypeTools.getRandomIngredientType();
-        Destroy(item.gameObject);
-        addIngredientToCombination(type);
-    }
-
-    public void addIngredientToCombination (Ingredient item)
-    {
-        GrabController grabController = GameObject.FindObjectOfType<GrabController>();
-        if (grabController.getGrabbedObject() == item.gameObject) {
-            grabController.StopGrab();
-        }
-
-        IngredientType type = item.ingredientType;
+        IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
         Destroy(item.gameObject);
         addIngredientToCombination(type);
     }
