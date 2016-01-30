@@ -19,6 +19,7 @@ public class CombinationTable : MonoBehaviour {
 
     public List<Combination> combinations = new List<Combination>();
     private IngredientType currentPool = 0;
+    private int noIngredients = 0;
 
     public void addIngredientToCombination(Item item)
     {
@@ -30,25 +31,30 @@ public class CombinationTable : MonoBehaviour {
     public void addIngredientToCombination(IngredientType item)
     {
         currentPool |= item;
+        noIngredients++;
         postitwall.addIngredient(item);
         GameObject product;
         if (isIngredientsAProduct(currentPool, out product))
         {
             currentPool = 0;
+            noIngredients = 0;
             instantiateProduct(product);
             postitwall.Clear();
+        } else if(noIngredients == 3)
+        {
+            currentPool = 0;
+            noIngredients = 0;
+            postitwall.Clear();
+            Debug.LogWarning("No combination was found");
         }
     }
 
     private bool isIngredientsAProduct(IngredientType pool, out GameObject product)
     {
         int c = combinations.Count;
-        Debug.LogWarning("c=" + c);
-            Debug.LogWarning("pool=" + pool.ToString());
         for (int i = 0; i < c; i++)
         {
             Combination combination = combinations[i];
-            Debug.LogWarning("combination=" + combination.bitmask.ToString());
             if (combination.bitmask == pool)
             {
                 product = combination.product;

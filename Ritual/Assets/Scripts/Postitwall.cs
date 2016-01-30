@@ -52,7 +52,7 @@ public class Postitwall : MonoBehaviour {
             else
                 throw new System.Exception("Too many ingredients received");
         } else
-            throw new System.Exception("Postit not found");
+            Debug.LogWarning("Postit not found");
     }
 
     public void Clear ()
