@@ -39,9 +39,7 @@ public class ObjectiveHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("a")) {
-			CompleteObjective (Objectives.BOOK, "Bible");
-		}
+
 	}
 
 	public void CompleteObjective(Objectives type, string oName){
