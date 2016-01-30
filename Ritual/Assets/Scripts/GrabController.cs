@@ -23,11 +23,24 @@ public class GrabController : MonoBehaviour {
 				grabbed = true;
 				Debug.Log ("Grabbed: " + grabbedObject.name);
 
-				HingeJoint joint = grabbedObject.AddComponent<HingeJoint> ();
+				HingeJoint joint = grabbedObject.GetComponent<HingeJoint>();
+				if (joint == null)
+					joint = grabbedObject.AddComponent<HingeJoint> ();
 				joint.connectedBody = grabPoint.GetComponent<Rigidbody>();
 				joint.anchor = Vector3.zero;// grabPoint.position;
-				joint.useSpring = true;
-				joint.breakForce = 1000f;
+				joint.breakForce = 100000f;
+				//joint.projectionMode = JointProjectionMode.PositionAndRotation;
+				//SoftJointLimitSpring lim = joint.linearLimitSpring;
+				//lim.spring = 10000f;
+				//lim.damper = 5f;
+				//joint.linearLimitSpring = lim;
+				//joint.xMotion = ConfigurableJointMotion.Limited;
+				//joint.yMotion = ConfigurableJointMotion.Limited;
+				//joint.zMotion = ConfigurableJointMotion.Limited;
+
+
+				grabbedObject.GetComponent<Rigidbody> ().useGravity = false;
+				//joint.breakForce = 10000f;
 
 				grabbedObject.layer |= LayerMask.NameToLayer ("Grabbed");
 			}
@@ -46,7 +59,7 @@ public class GrabController : MonoBehaviour {
 	public void StopGrab(){
 		Destroy (grabbedObject.GetComponent<HingeJoint> ());
 		grabbedObject.layer = 0;
-
+		grabbedObject.GetComponent<Rigidbody> ().useGravity = true;
 		grabbedObject = null;
 		grabbed = false;
 	}
@@ -61,7 +74,7 @@ public class GrabController : MonoBehaviour {
 		foreach (RaycastHit hit in hits) {
 			if (hit.transform.tag == "Grabbable") {
 				obj = hit.transform.gameObject;
-				grabPoint.position = hit.point;
+				grabPoint.position = hit.transform.position + hit.transform.GetComponent<Rigidbody>().centerOfMass;
 
 
 			}
