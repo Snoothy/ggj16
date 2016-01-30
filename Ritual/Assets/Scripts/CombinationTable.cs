@@ -27,8 +27,16 @@ public class CombinationTable : MonoBehaviour {
     public void addIngredientToCombination(Item item)
     {
         IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
-        Destroy(item.gameObject);
-        addIngredientToCombination(type);
+
+        if (!addIngredientToCombination(type))
+        {
+            placeProduct(item.gameObject);
+            item.gameObject.AddComponent<Rigidbody>();
+            item.GetComponent<Collider>().enabled = true;
+        } else
+        {
+            Destroy(item.gameObject);
+        }
     }
 
     private GameObject getBadProduct ()
@@ -52,25 +60,34 @@ public class CombinationTable : MonoBehaviour {
         return badProduct;
     }
 
-    public void addIngredientToCombination(IngredientType item)
+    public bool addIngredientToCombination(IngredientType item)
     {
-        currentPool |= item;
-        noIngredients++;
-        GameObject product;
-        if (isIngredientsAProduct(currentPool, out product))
+        // BUG: this check fails if two same typed items are added to the pool before the first item has completed its downscale animation
+        if (noIngredients == 0 || (currentPool & item) != item)
         {
-            currentPool = 0;
-            noIngredients = 0;
-            instantiateProduct(product);
-            postitwall.Clear();
-        } else if (noIngredients == 3)
-        {
-            currentPool = 0;
-            noIngredients = 0;
-            postitwall.Clear();
-            Debug.LogWarning("No combination was found");
-            instantiateProduct(this.getBadProduct());
+            currentPool |= item;
+            noIngredients++;
+            GameObject product;
+            if (isIngredientsAProduct(currentPool, out product))
+            {
+                currentPool = 0;
+                noIngredients = 0;
+                instantiateProduct(product);
+                postitwall.Clear();
+                enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
+            }
+            else if (noIngredients == 3)
+            {
+                currentPool = 0;
+                noIngredients = 0;
+                postitwall.Clear();
+                Debug.LogWarning("No combination was found");
+                instantiateProduct(this.getBadProduct());
+                enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
+            }
+            return true;
         }
+        return false;
     }
 
     private bool isIngredientsAProduct(IngredientType pool, out GameObject product)
@@ -82,7 +99,6 @@ public class CombinationTable : MonoBehaviour {
             if (combination.bitmask == pool)
             {
                 product = combination.product;
-                Debug.Log(currentPool.ToString() + "==" + combination.bitmask.ToString());
                 return true;
             }
         }
@@ -115,15 +131,8 @@ public class CombinationTable : MonoBehaviour {
             grabController.StopGrab();
         }
 
-        foreach (Rigidbody rigidbody in item.GetComponentsInChildren<Rigidbody>())
-        {
-            Destroy(rigidbody);
-        }
-
-        foreach (Collider collider in item.GetComponentsInChildren<Collider>())
-        {
-            Destroy(collider);
-        }
+        Destroy(item.GetComponent<Rigidbody>());
+        item.GetComponent<Collider>().enabled = false;
 
         GameObject spinParent = new GameObject("SpinParent");
         spinParent.transform.parent = enterPoolParent;
@@ -143,14 +152,41 @@ public class CombinationTable : MonoBehaviour {
         {
             addIngredientToCombination(item);
             Destroy(spinParent);
+            Destroy(item.gameObject.GetComponent<MoveToVectorByTime>());
+            Destroy(a);
         };
         scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.zero, 0));
-        postitwall.addIngredient(item);
+        addingItemToPool(item);
+    }
+
+    private void addingItemToPool(Item item)
+    {
+        IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
+
+        if (noIngredients == 0 || (currentPool & type) != type)
+        {
+            postitwall.addIngredient(item);
+        }
+
+        IngredientType pool = currentPool | type;
+        GameObject product;
+        if (isIngredientsAProduct(pool, out product))
+        {
+            enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = false;
+        }
     }
 
     public void instantiateProduct(GameObject product)
     {
         Debug.LogWarning("new product" + product.name);
-        Instantiate(product, spawnProductAt.position, Quaternion.identity);
+        placeProduct(Instantiate(product));
+    }
+
+    public void placeProduct (GameObject product)
+    {
+        product.transform.parent = null;
+        product.transform.position = spawnProductAt.position;
+        product.transform.rotation = Quaternion.identity;
+        product.transform.localScale = Vector3.one;
     }
 }
