@@ -16,8 +16,8 @@ TagManager:
   - 
   - Grabbed
   - Player
-  - 
-  - 
+  - NoCollision
+  - PushGrabbed
   - 
   - 
   - 
