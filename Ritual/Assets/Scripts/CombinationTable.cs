@@ -3,7 +3,6 @@
 public class CombinationTable : MonoBehaviour {
 
     public Transform spawnProductAt;
-
     public Combinator combinator;
 
 	// Use this for initialization
