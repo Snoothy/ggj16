@@ -35,7 +35,12 @@ public class CombinationTable : MonoBehaviour {
 
     public void OnEnterCollision(Product item)
     {
-        animateEnter(item);
+        GrabController grabController = GameObject.FindObjectOfType<GrabController>();
+        if (grabController.getGrabbedObject() == item.gameObject)
+        {
+            grabController.StopGrab();
+        }
+        item.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(5, 5, 5), enterPoolParent.transform.position, ForceMode.Impulse);
     }
 
     public void animateEnter (Item item)
