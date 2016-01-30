@@ -80,7 +80,7 @@ public class GrabController : MonoBehaviour {
 		grabbed = false;
 	}
 
-	GameObject GetGrabbableObject(){
+	public GameObject GetGrabbableObject(){
 		GameObject obj = null;
 		Debug.DrawRay (grabStart.parent.position, Vector3.Normalize( GrabDirection()) * grabDistance, Color.blue, 2f);
 

@@ -7,6 +7,7 @@ public class Combinator : MonoBehaviour {
     private IngredientType currentPool = 0;
 
     public CombinationTable table;
+    public Postitwall postitwall;
 
 	// Use this for initialization
 	void Start () {
@@ -46,11 +47,13 @@ public class Combinator : MonoBehaviour {
     public void addIngredientToCombination(IngredientType item)
     {
         currentPool |= item;
+        postitwall.addIngredient(item);
         GameObject product;
         if (isIngredientsAProduct(currentPool, out product))
         {
             currentPool = 0;
             table.instantiateProduct(product);
+            postitwall.Clear();
         }
     }
 
