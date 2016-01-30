@@ -589,7 +589,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9267459, y: -0.69, z: -1.1151695}
+  m_LocalPosition: {x: -1.9619178, y: -0.44, z: -4.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480896}
@@ -1110,8 +1110,30 @@ MonoBehaviour:
   enterPoolParent: {fileID: 454344}
   postitwall: {fileID: 11473838}
   combinations:
-  - ingredients: 020000000400000008000000
-    product: {fileID: 185536, guid: 35906f56173e3434f9d69155d06269a2, type: 2}
+  - ingredients: 0400000002000000
+    product: {fileID: 136470, guid: 86a448d1a8e6dc84896b32f0a9db4eca, type: 2}
+  - ingredients: 000400000002000010000000
+    product: {fileID: 122288, guid: 0a8fc5dea137fc24081e712ab11a8933, type: 2}
+  - ingredients: 1000000080000000
+    product: {fileID: 194534, guid: 53dce814c073f8b4eaff36fbe6cdac3d, type: 2}
+  - ingredients: 400000008000000004000000
+    product: {fileID: 150618, guid: 2daf1994760a51448811ea874a2b4b0b, type: 2}
+  - ingredients: 0200000008000000
+    product: {fileID: 157796, guid: 7001b363e0a71f046a0ed05de9c9f4b5, type: 2}
+  - ingredients: 2000000010000000
+    product: {fileID: 122640, guid: 9304643d27f793b459bae059c674cb09, type: 2}
+  - ingredients: 000400000002000010000000
+    product: {fileID: 122288, guid: 0a8fc5dea137fc24081e712ab11a8933, type: 2}
+  - ingredients: 1000000000020000
+    product: {fileID: 156598, guid: 38603443beae02d40aece8aae028c9c1, type: 2}
+  - ingredients: 000400000002000040000000
+    product: {fileID: 126800, guid: 6f90a18a71bc6334eb9f468a0fe44184, type: 2}
+  - ingredients: 000800000010000000200000
+    product: {fileID: 101604, guid: e301585ccf1a299449d982b9a966e559, type: 2}
+  - ingredients: 001000000020000040000000
+    product: {fileID: 139500, guid: 83be500167fc4d949bde0797aca72426, type: 2}
+  - ingredients: 001000000020000008000000
+    product: {fileID: 176710, guid: 70d941c5b6dc80b46a9976bf5d1ae090, type: 2}
   spinConfigurations:
     fromHeight: 0.45
     rotationSpeed: 160
