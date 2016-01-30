@@ -51,12 +51,13 @@ public class HighlightGrabbableObject : MonoBehaviour {
         if (grabbedObject != null)
         {
             objectToHighlight = grabbedObject;
-        } else if (grabbableObject != null)
+        }
+        else if (grabbableObject != null)
         {
             objectToHighlight = grabbableObject;
         }
 
-        if (highlightedObject != null && (objectToHighlight == null || objectToHighlight != highlightedObject.gameObject))
+        if (highlightedObject != null)
         {
             foreach (MaterialMeshPair pair in meshMaterialPairs)
             {
@@ -70,10 +71,12 @@ public class HighlightGrabbableObject : MonoBehaviour {
             meshMaterialPairs = null;
             spriteMaterialPairs = null;
         }
-        if (objectToHighlight != null) {
+        if (objectToHighlight != null)
+        {
             Item item = objectToHighlight.GetComponent<Item>();
-			if (item != null) {
-                highlightedObject = item;
+            highlightedObject = item;
+            if (highlightedObject != null)
+            {
                 meshMaterialPairs = new List<MaterialMeshPair>();
                 spriteMaterialPairs = new List<MaterialSpritePair>();
                 foreach (MeshRenderer mesh in highlightedObject.GetComponentsInChildren<MeshRenderer>())
