@@ -115,7 +115,11 @@ public class CombinationTable : MonoBehaviour {
         spinParent.AddComponent<MoveToVectorByTime>().runActionWith(new MoveToVectorByTimeInfo(spinConfigurations.downTime, Vector3.zero, true, 0));
 
         ScaleToByTime scale = item.gameObject.AddComponent<ScaleToByTime>();
-        scale.delegates += a => addIngredientToCombination(item);
+        scale.delegates += a =>
+        {
+            addIngredientToCombination(item);
+            Destroy(spinParent);
+        };
         scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.zero, 0));
     }
 
