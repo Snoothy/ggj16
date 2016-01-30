@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba6272dc76f8024796f4f3a58eef47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRendererForOutline: {fileID: 0}
   ingredientType: 8
 --- !u!212 &21201150
 SpriteRenderer:

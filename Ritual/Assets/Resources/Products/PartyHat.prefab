@@ -26,6 +26,7 @@ GameObject:
   - 65: {fileID: 6594010}
   - 54: {fileID: 5433762}
   - 114: {fileID: 11442264}
+  - 114: {fileID: 11472182}
   m_Layer: 0
   m_Name: PartyHat
   m_TagString: Product
@@ -126,6 +127,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productName: Party hat
+--- !u!114 &11472182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407876aa01f2fdd4a9f9259d48aafba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21292626
 SpriteRenderer:
   m_ObjectHideFlags: 1
