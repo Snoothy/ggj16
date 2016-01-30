@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class Postitwall : MonoBehaviour {
 
-    public List<IngredientTypeToPostIt> postits = new List<IngredientTypeToPostIt>();
+    public GameObject genericPostIt;
+    public Material genericPostItMaterial;
 
     public Transform spot1;
     private GameObject object1;
@@ -12,47 +12,49 @@ public class Postitwall : MonoBehaviour {
     public Transform spot3;
     private GameObject object3;
 
-    private bool tryToGetTexture (IngredientType ingredient, out GameObject postitprefab)
+    private bool tryToGetTexture(Item ingredient, out Sprite sprite)
     {
-        foreach (IngredientTypeToPostIt postit in postits)
+        if (ingredient.GetComponentInChildren<SpriteRenderer>() != null)
         {
-            if (postit.type == ingredient)
-            {
-                postitprefab = postit.postit;
-                return true;
-            }
+            sprite = ingredient.GetComponentInChildren<SpriteRenderer>().sprite;
+            return true;
         }
-        postitprefab = null;
+        sprite = null;
         return false;
     }
 
-    public void addIngredient (IngredientType ingredient)
+    public void addIngredient(Item ingredient)
     {
-        GameObject postit;
-        if (tryToGetTexture(ingredient, out postit))
+        Sprite sprite;
+        if (tryToGetTexture(ingredient, out sprite))
         {
+            GameObject obj;
+            Transform spot;
             if (object1 == null)
             {
-                object1 = Instantiate(postit, spot1.position, spot1.rotation) as GameObject;
-                object1.transform.parent = spot1;
-                object1.transform.localScale = Vector3.one;
+                object1 = obj = Instantiate(genericPostIt, spot1.position, spot1.rotation) as GameObject;
+                spot = spot1;
             }
             else if (object2 == null)
             {
-                object2 = Instantiate(postit, spot2.position, spot2.rotation) as GameObject;
-                object2.transform.parent = spot2;
-                object2.transform.localScale = Vector3.one;
+                object2 = obj = Instantiate(genericPostIt, spot2.position, spot2.rotation) as GameObject;
+                spot = spot2;
             }
             else if (object3 == null)
             {
-                object3 = Instantiate(postit, spot3.position, spot3.rotation) as GameObject;
-                object3.transform.parent = spot3;
-                object3.transform.localScale = Vector3.one;
+                object3 = obj = Instantiate(genericPostIt, spot3.position, spot3.rotation) as GameObject;
+                spot = spot3;
             }
             else
                 throw new System.Exception("Too many ingredients received");
-        } else
-            Debug.LogWarning("Postit not found");
+
+            obj.transform.parent = spot;
+            obj.transform.localScale = Vector3.one;
+            obj.GetComponentInChildren<MeshRenderer>().material = Instantiate(genericPostItMaterial);
+            obj.GetComponentInChildren<MeshRenderer>().material.mainTexture = sprite.texture;
+        }
+        else
+            Debug.LogWarning("Sprite not found");
     }
 
     public void Clear ()

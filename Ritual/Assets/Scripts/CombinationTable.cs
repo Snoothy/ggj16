@@ -25,6 +25,7 @@ public class CombinationTable : MonoBehaviour {
     {
         IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
         Destroy(item.gameObject);
+        postitwall.addIngredient(item);
         addIngredientToCombination(type);
     }
 
@@ -32,7 +33,6 @@ public class CombinationTable : MonoBehaviour {
     {
         currentPool |= item;
         noIngredients++;
-        postitwall.addIngredient(item);
         GameObject product;
         if (isIngredientsAProduct(currentPool, out product))
         {
@@ -115,7 +115,11 @@ public class CombinationTable : MonoBehaviour {
         spinParent.AddComponent<MoveToVectorByTime>().runActionWith(new MoveToVectorByTimeInfo(spinConfigurations.downTime, Vector3.zero, true, 0));
 
         ScaleToByTime scale = item.gameObject.AddComponent<ScaleToByTime>();
-        scale.delegates += a => addIngredientToCombination(item);
+        scale.delegates += a =>
+        {
+            addIngredientToCombination(item);
+            Destroy(spinParent);
+        };
         scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.zero, 0));
     }
 

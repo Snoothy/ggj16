@@ -779,13 +779,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e62a697f299d90449555026223032c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postits:
-  - type: 2
-    postit: {fileID: 172716, guid: 20e2699047fffae45af7827bf7ecce73, type: 2}
-  - type: 4
-    postit: {fileID: 117302, guid: 1fb34f90f75cc3147af8a192be79ff81, type: 2}
-  - type: 8
-    postit: {fileID: 173862, guid: d719dcff5420f474395979d79923e096, type: 2}
+  genericPostIt: {fileID: 172716, guid: 83971e7a89389ba4bb3a8355c4ca022c, type: 2}
+  genericPostItMaterial: {fileID: 2100000, guid: 9209e06d8699e634fbb20d8c57980161,
+    type: 2}
   spot1: {fileID: 1918911240}
   spot2: {fileID: 1513915754}
   spot3: {fileID: 637545815}
