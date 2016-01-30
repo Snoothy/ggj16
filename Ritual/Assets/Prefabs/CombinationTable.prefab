@@ -273,7 +273,7 @@ GameObject:
   - 23: {fileID: 2305710}
   - 114: {fileID: 11468070}
   - 64: {fileID: 6496344}
-  - 95: {fileID: 9542484}
+  - 114: {fileID: 11466924}
   m_Layer: 0
   m_Name: Enter
   m_TagString: Untagged
@@ -1060,23 +1060,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9542484
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165928}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a6519d9700fdf64999e71440f7221c0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11428352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1146,6 +1129,24 @@ MonoBehaviour:
     fromHeight: 0.45
     rotationSpeed: 160
     downTime: 1
+--- !u!114 &11466924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012015f19945b4fb3af5030d90e3c972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  actionSpeed: 1
+  runActionOnStart: 1
+  resetOnDisable: 0
+  actionInfo:
+    speed: 1
+    rotation: {x: 0, y: -90, z: 0}
 --- !u!114 &11468070
 MonoBehaviour:
   m_ObjectHideFlags: 1
