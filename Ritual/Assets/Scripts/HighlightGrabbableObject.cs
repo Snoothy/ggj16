@@ -30,9 +30,11 @@ public class HighlightGrabbableObject : MonoBehaviour {
             {
                 Item item = grabbableObject.GetComponent<Item>();
                 highlightedObject = item;
-                highlightedObjectOriginalMaterial = item.meshRendererForOutline.material;
+				if (item != null && item.meshRendererForOutline != null && item.meshRendererForOutline.material != null) {
+					highlightedObjectOriginalMaterial = item.meshRendererForOutline.material;
 
-                item.meshRendererForOutline.material = Instantiate(outlineMaterial);
+					item.meshRendererForOutline.material = Instantiate (outlineMaterial);
+				}
             }
         }
     }

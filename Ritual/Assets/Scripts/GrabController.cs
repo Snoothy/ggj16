@@ -8,6 +8,7 @@ public class GrabController : MonoBehaviour {
 	bool grabbed = false;
 	GameObject grabbedObject;
 	float grabDistance = 2f;
+	Animator anim;
 
 	public AnimationCurve c;// = new AnimationCurve ();
 	public AnimationCurve speed;
@@ -17,6 +18,7 @@ public class GrabController : MonoBehaviour {
 		grabPoint = transform.FindChild ("GrabPoint");//.FindChild("GrabOffset").FindChild("GrabChild").FindChild ("GrabPoint");
 		grabForward = transform.FindChild ("GrabForward");
 		grabStart = transform.FindChild ("GrabPoint");
+		anim = GetComponentInChildren<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -65,6 +67,8 @@ public class GrabController : MonoBehaviour {
 				grabbedObject.GetComponent<Rigidbody> ().velocity = Vector3.Normalize (grabbedObject.GetComponent<Rigidbody> ().velocity) * maxSpeed;
 			}
 		}
+
+		anim.SetBool ("doPinch", grabbed);
 	}
 
     public GameObject getGrabbedObject ()
@@ -89,7 +93,7 @@ public class GrabController : MonoBehaviour {
 		//RaycastHit hit = new RaycastHit();
 		//Physics.Raycast (grabStart.parent.position, Vector3.Normalize (GrabDirection ()), out hit, grabDistance);
 		foreach (RaycastHit hit in hits) {
-			if (hit.transform.tag == "Grabbable") {
+			if (hit.transform.tag == "Grabbable" || hit.transform.tag == "Product") {
 				obj = hit.transform.gameObject;
 				//grabPoint.position = hit.transform.position + hit.transform.GetComponent<Rigidbody>().centerOfMass;
 				//grabPoint.localPosition = new Vector3 (0f, 0f, grabPoint.localPosition.z);
