@@ -18,6 +18,7 @@ public class CombinationTable : MonoBehaviour {
     public Transform exitPoolParent;
     public Postitwall postitwall;
     public AudioClip wrongAnswerClip;
+    public AudioClip correctAnswerClip;
 
     public List<Combination> combinations = new List<Combination>();
     public List<Product> badproducts = new List<Product>();
@@ -187,6 +188,8 @@ public class CombinationTable : MonoBehaviour {
 
     private void instantiateProduct(GameObject product)
     {
+        exitPoolParent.GetComponent<AudioSource>().PlayOneShot(correctAnswerClip);
+
         Debug.LogWarning("new product" + product.name);
         placeProduct(Instantiate(product));
     }

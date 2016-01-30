@@ -10,6 +10,7 @@ public class ObjectiveTracker : MonoBehaviour {
 	ObjectiveHandler handler;
 	GrabController grab;
     public AudioClip wrongAnswerClip;
+    public AudioClip correctAnswerClip;
 
 	bool completed = false;
 
@@ -34,7 +35,17 @@ public class ObjectiveTracker : MonoBehaviour {
 			other.transform.tag = "Untagged";
 			outline.SetActive(false);
 			completed = true;
-		} else if (other.gameObject.GetComponent<Ingredient>())
+
+            AudioSource audioSource = other.gameObject.GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = other.gameObject.AddComponent<AudioSource>();
+            }
+
+            audioSource.PlayOneShot(correctAnswerClip, 0.3f);
+
+        }
+        else if (other.gameObject.GetComponent<Ingredient>())
         {
             GrabController grabController = GameObject.FindObjectOfType<GrabController>();
             if (grabController.getGrabbedObject() == other.gameObject)
