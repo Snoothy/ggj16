@@ -1,4 +1,17 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+
+public class MaterialGameObjectPair
+{
+    public Material material;
+    public MeshRenderer item;
+
+    public MaterialGameObjectPair(Material material, MeshRenderer item)
+    {
+        this.material = material;
+        this.item = item;
+    }
+}
 
 [RequireComponent(typeof(GrabController))]
 public class HighlightGrabbableObject : MonoBehaviour {
@@ -6,7 +19,7 @@ public class HighlightGrabbableObject : MonoBehaviour {
     public Material outlineMaterial;
 
     private Item highlightedObject;
-    private Material highlightedObjectOriginalMaterial;
+    private List<MaterialGameObjectPair> highlightedObjectOriginalMaterial;
 
     private GrabController grabController;
 
@@ -19,7 +32,10 @@ public class HighlightGrabbableObject : MonoBehaviour {
     {
         if (highlightedObject != null)
         {
-            highlightedObject.meshRendererForOutline.material = highlightedObjectOriginalMaterial;
+            foreach (MaterialGameObjectPair pair in highlightedObjectOriginalMaterial)
+            {
+                pair.item.material = pair.material;
+            }
             highlightedObject = null;
             highlightedObjectOriginalMaterial = null;
         }
@@ -30,10 +46,13 @@ public class HighlightGrabbableObject : MonoBehaviour {
             {
                 Item item = grabbableObject.GetComponent<Item>();
                 highlightedObject = item;
-				if (item != null && item.meshRendererForOutline != null && item.meshRendererForOutline.material != null) {
-					highlightedObjectOriginalMaterial = item.meshRendererForOutline.material;
-
-					item.meshRendererForOutline.material = Instantiate (outlineMaterial);
+				if (highlightedObject != null) {
+                    highlightedObjectOriginalMaterial = new List<MaterialGameObjectPair>();
+                    foreach (MeshRenderer mesh in highlightedObject.GetComponentsInChildren<MeshRenderer>())
+                    {
+                        highlightedObjectOriginalMaterial.Add(new MaterialGameObjectPair(mesh.material, mesh));
+                        mesh.material = Instantiate(outlineMaterial);
+                    }
 				}
             }
         }
