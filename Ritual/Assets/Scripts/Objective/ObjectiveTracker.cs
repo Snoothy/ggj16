@@ -25,7 +25,7 @@ public class ObjectiveTracker : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.transform.tag == "Product" && !completed) {
-			handler.CompleteObjective (type, other.transform.name);
+			handler.CompleteObjective (type, other.transform.GetComponent<Product>().productName.ToLower());
 			HandleProduct (other.transform);
 			grab.StopGrab ();
 			Destroy (other.gameObject.GetComponent<Rigidbody>());
