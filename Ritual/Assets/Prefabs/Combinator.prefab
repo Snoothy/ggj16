@@ -40,15 +40,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combinations:
-  - ingredients: 010000000200000004000000
-    product: {fileID: 11411518, guid: 35906f56173e3434f9d69155d06269a2, type: 2}
+  - ingredients: 100000000004000000020000
+    product: {fileID: 122288, guid: 0a8fc5dea137fc24081e712ab11a8933, type: 2}
+  table: {fileID: 0}
+  postitwall: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: combinations.Array.data[0].ingredients.Array.data[0]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: combinations.Array.data[0].ingredients.Array.data[1]
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: combinations.Array.data[0].ingredients.Array.data[2]
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: combinations.Array.data[0].product
+      value: 
+      objectReference: {fileID: 122288, guid: 0a8fc5dea137fc24081e712ab11a8933, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104782}

@@ -86,7 +86,7 @@ public class GrabController : MonoBehaviour {
 
 	public GameObject GetGrabbableObject(){
 		GameObject obj = null;
-		Debug.DrawRay (grabStart.parent.position, Vector3.Normalize( GrabDirection()) * grabDistance, Color.blue, 2f);
+		//Debug.DrawRay (grabStart.parent.position, Vector3.Normalize( GrabDirection()) * grabDistance, Color.blue, 2f);
 
 		RaycastHit[] hits = Physics.SphereCastAll (grabStart.parent.position, .25f, Vector3.Normalize(GrabDirection()),grabDistance);
 

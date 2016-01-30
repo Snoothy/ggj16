@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabbable
   - UI
+  - Product
   layers:
   - Default
   - TransparentFX
