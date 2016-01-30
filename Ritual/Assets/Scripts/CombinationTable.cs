@@ -17,6 +17,8 @@ public class CombinationTable : MonoBehaviour {
     public Transform enterPoolParent;
     public Transform exitPoolParent;
     public Postitwall postitwall;
+    public AudioClip wrongAnswerClip;
+    public AudioClip correctAnswerClip;
 
     public List<Combination> combinations = new List<Combination>();
     public List<Product> badproducts = new List<Product>();
@@ -122,6 +124,13 @@ public class CombinationTable : MonoBehaviour {
             grabController.StopGrab();
         }
         item.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(5, 5, 5), enterPoolParent.transform.position, ForceMode.Impulse);
+        AudioSource audioSource = item.gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = item.gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.PlayOneShot(wrongAnswerClip, 0.3f);
     }
 
     public void animateEnter (Item item)
@@ -179,6 +188,8 @@ public class CombinationTable : MonoBehaviour {
 
     private void instantiateProduct(GameObject product)
     {
+        exitPoolParent.GetComponent<AudioSource>().PlayOneShot(correctAnswerClip);
+
         Debug.LogWarning("new product" + product.name);
         placeProduct(Instantiate(product));
     }
