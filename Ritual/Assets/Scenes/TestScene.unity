@@ -1239,6 +1239,98 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
+--- !u!1001 &1875678721
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457078, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_Text
+      value: "Prepare a cake at the dining table \u2610\nPut festive hats on the guests
+        \u2610\nPut rice in the empty rice bag \u2610\nBring a bouquet for the bride
+        \u2610\nBring a ring to the groom \u2610\nThe pastor is missing his book \u2610\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 142292, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_Name
+      value: Objectives
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2042255812
 GameObject:
   m_ObjectHideFlags: 0
