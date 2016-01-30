@@ -26,12 +26,12 @@ public class ObjectiveHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		olist.Add(Objectives.CAKE, new Objective ("Prepare a cake at the dining table"));
+		olist.Add(Objectives.BOOK, new Objective ("The pastor forgot to bring his own book"));
+		olist.Add(Objectives.CAKE, new Objective ("Prepare a cake for the dining table"));
 		olist.Add(Objectives.HATS, new Objective ("Put festive hats on the guests"));
 		olist.Add(Objectives.RICE, new Objective ("Put rice in the empty rice bag"));
 		olist.Add(Objectives.BOUQUET, new Objective ("Bring a bouquet for the bride"));
-		olist.Add(Objectives.RING, new Objective ("The groom is missing the ring"));
-		olist.Add(Objectives.BOOK, new Objective ("The pasto forgot to bring is own book"));
+		olist.Add(Objectives.RING, new Objective ("The groom is missing his ring"));
 
 		objText = transform.FindChild ("Objectives").GetComponent<Text> ();
 		UpdateObjectives ();
