@@ -179,8 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba6272dc76f8024796f4f3a58eef47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRendererForOutline: {fileID: 2322182}
-  ingredientType: 2
+  ingredientType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -190,7 +189,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: ingredientType
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
