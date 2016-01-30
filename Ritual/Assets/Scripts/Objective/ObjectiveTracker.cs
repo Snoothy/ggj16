@@ -33,7 +33,15 @@ public class ObjectiveTracker : MonoBehaviour {
 			other.transform.tag = "Untagged";
 			outline.SetActive(false);
 			completed = true;
-		}
+		} else if (other.gameObject.GetComponent<Ingredient>())
+        {
+            GrabController grabController = GameObject.FindObjectOfType<GrabController>();
+            if (grabController.getGrabbedObject() == other.gameObject)
+            {
+                grabController.StopGrab();
+            }
+            other.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(5, 5, 5), other.transform.position, ForceMode.Impulse);
+        }
 	}
 
 	protected virtual void HandleProduct(Transform other){
