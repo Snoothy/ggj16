@@ -48,7 +48,7 @@ public class ObjectiveTracker : MonoBehaviour {
             audioSource.PlayOneShot(correctAnswerClip, 0.3f);
 
         }
-        else if (other.gameObject.GetComponent<Ingredient>())
+        else if (other.gameObject.GetComponent<Ingredient>() && !completed)
         {
             GrabController grabController = GameObject.FindObjectOfType<GrabController>();
             if (grabController.getGrabbedObject() == other.gameObject)
