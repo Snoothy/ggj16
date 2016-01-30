@@ -1619,7 +1619,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431300, guid: 6f90a18a71bc6334eb9f468a0fe44184, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f90a18a71bc6334eb9f468a0fe44184, type: 2}
@@ -2629,21 +2629,6 @@ MonoBehaviour:
   type: 3
   attachPoint: {fileID: 898312193}
   rotation: {x: 0, y: 45, z: 0}
---- !u!1 &1457385222 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 194534, guid: 53dce814c073f8b4eaff36fbe6cdac3d, type: 2}
-  m_PrefabInternal: {fileID: 1156670072}
---- !u!114 &1457385227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457385222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407876aa01f2fdd4a9f9259d48aafba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1460805827
 GameObject:
   m_ObjectHideFlags: 0
