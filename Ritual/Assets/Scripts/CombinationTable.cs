@@ -18,6 +18,9 @@ public class CombinationTable : MonoBehaviour {
     public Postitwall postitwall;
 
     public List<Combination> combinations = new List<Combination>();
+    public List<Product> badproducts = new List<Product>();
+    private List<Product> badproductsStack = null;
+
     private IngredientType currentPool = 0;
     private int noIngredients = 0;
 
@@ -25,8 +28,28 @@ public class CombinationTable : MonoBehaviour {
     {
         IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
         Destroy(item.gameObject);
-        postitwall.addIngredient(item);
         addIngredientToCombination(type);
+    }
+
+    private GameObject getBadProduct ()
+    {
+        if (badproductsStack == null)
+        {
+            badproductsStack = new List<Product>();
+        }
+        if (badproductsStack.Count == 0)
+        {
+            badproductsStack.AddRange(badproducts);
+        }
+
+        GameObject badProduct;
+
+        int i = Random.Range(0, badproductsStack.Count);
+
+        badProduct = badproductsStack[i].gameObject;
+        badproductsStack.RemoveAt(i);
+
+        return badProduct;
     }
 
     public void addIngredientToCombination(IngredientType item)
@@ -40,12 +63,13 @@ public class CombinationTable : MonoBehaviour {
             noIngredients = 0;
             instantiateProduct(product);
             postitwall.Clear();
-        } else if(noIngredients == 3)
+        } else if (noIngredients == 3)
         {
             currentPool = 0;
             noIngredients = 0;
             postitwall.Clear();
             Debug.LogWarning("No combination was found");
+            instantiateProduct(this.getBadProduct());
         }
     }
 
@@ -121,6 +145,7 @@ public class CombinationTable : MonoBehaviour {
             Destroy(spinParent);
         };
         scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.zero, 0));
+        postitwall.addIngredient(item);
     }
 
     public void instantiateProduct(GameObject product)
