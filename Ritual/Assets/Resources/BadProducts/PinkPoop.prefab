@@ -11,6 +11,7 @@ GameObject:
   - 65: {fileID: 6533002}
   - 54: {fileID: 5402430}
   - 114: {fileID: 11410896}
+  - 114: {fileID: 11412284}
   m_Layer: 0
   m_Name: PinkPoop
   m_TagString: Product
@@ -126,6 +127,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productName: Pink poop
+--- !u!114 &11412284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407876aa01f2fdd4a9f9259d48aafba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21235994
 SpriteRenderer:
   m_ObjectHideFlags: 1
