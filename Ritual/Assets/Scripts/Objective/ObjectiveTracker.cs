@@ -30,8 +30,11 @@ public class ObjectiveTracker : MonoBehaviour {
 		if (other.transform.tag == "Product" && !completed) {
 			handler.CompleteObjective (type, other.transform.GetComponent<Product>().productName.ToLower());
 			HandleProduct (other.transform);
-			grab.StopGrab ();
-			Destroy (other.gameObject.GetComponent<Rigidbody>());
+            if (grab.getGrabbedObject() == other.gameObject)
+            {
+                grab.StopGrab();
+            }
+            Destroy (other.gameObject.GetComponent<Rigidbody>());
 			other.transform.tag = "Untagged";
 			outline.SetActive(false);
 			completed = true;
