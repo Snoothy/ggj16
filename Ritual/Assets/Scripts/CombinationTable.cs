@@ -28,7 +28,6 @@ public class CombinationTable : MonoBehaviour {
     {
         IngredientType type = item is Ingredient ? (item as Ingredient).ingredientType : IngredientTypeTools.getRandomIngredientType();
         Destroy(item.gameObject);
-        postitwall.addIngredient(item);
         addIngredientToCombination(type);
     }
 
@@ -146,6 +145,7 @@ public class CombinationTable : MonoBehaviour {
             Destroy(spinParent);
         };
         scale.runActionWith(new ScaleToByTimeInfo(spinConfigurations.downTime, Vector3.zero, 0));
+        postitwall.addIngredient(item);
     }
 
     public void instantiateProduct(GameObject product)
