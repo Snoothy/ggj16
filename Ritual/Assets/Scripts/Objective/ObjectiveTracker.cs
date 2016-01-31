@@ -45,7 +45,7 @@ public class ObjectiveTracker : MonoBehaviour {
                 audioSource = other.gameObject.AddComponent<AudioSource>();
             }
 
-            audioSource.PlayOneShot(correctAnswerClip, 0.5f);
+            audioSource.PlayOneShot(correctAnswerClip, 1f);
         }
         else if (other.gameObject.GetComponent<Ingredient>() && !completed)
         {
@@ -61,7 +61,7 @@ public class ObjectiveTracker : MonoBehaviour {
                 audioSource = other.gameObject.AddComponent<AudioSource>();
             }
 
-            audioSource.PlayOneShot(wrongAnswerClip, 0.5f);
+            audioSource.PlayOneShot(wrongAnswerClip, 1f);
         }
 	}
 
