@@ -47,7 +47,7 @@ public class ObjectiveHandler : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown ("a")) {
 			//Debug.Log (GenerateEndText());
-			OnCompleteGame();
+			//OnCompleteGame();
 		}
 	}
 
