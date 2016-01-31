@@ -1108,22 +1108,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11459946, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
-      propertyPath: m_UseHeadBob
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11459946, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
-      propertyPath: m_WalkSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 430268, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 430268, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
   m_IsPrefabParent: 0
@@ -6436,33 +6420,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637376257}
   m_RootOrder: 6
---- !u!1 &1047625074
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1047625075}
-  m_Layer: 9
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1047625075
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047625074}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2005932761}
-  m_RootOrder: 2
 --- !u!1 &1055248290
 GameObject:
   m_ObjectHideFlags: 0
@@ -12961,10 +12918,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 840220174}
   m_RootOrder: 0
---- !u!4 &2005932761 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 430268, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
-  m_PrefabInternal: {fileID: 136305664}
 --- !u!4 &2021111652 stripped
 Transform:
   m_PrefabParentObject: {fileID: 443320, guid: 7b7f3b9b01145ff4fa1378d522d31c1a, type: 2}
