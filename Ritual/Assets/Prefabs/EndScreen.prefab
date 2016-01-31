@@ -320,8 +320,8 @@ MonoBehaviour:
   resetOnDisable: 0
   resetOnFinish: 0
   actionInfo:
-    time: 0
-    to: 0
+    time: 4
+    to: 0.86
     delay: 0
 --- !u!114 &11490968
 MonoBehaviour:
@@ -521,6 +521,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_FontData.m_Alignment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: actionInfo.time
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: actionInfo.to
+      value: 0.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
