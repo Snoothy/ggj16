@@ -222,6 +222,7 @@ GameObject:
   - 114: {fileID: 11459946}
   - 54: {fileID: 5436034}
   - 82: {fileID: 8215870}
+  - 114: {fileID: 11432492}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1578,6 +1579,20 @@ MonoBehaviour:
   rigidbodyFirstPersonController: {fileID: 0}
   StrideInterval: 0
   RunningStrideLengthen: 0
+--- !u!114 &11432492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633cf17de60ceb84d8f3d745a6a77865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpMe: {fileID: 8300000, guid: c6d30b29a4188bf41bd8a4ee18de7b22, type: 3}
+  volume: 0.09
+  chance: 0.1
 --- !u!114 &11454624
 MonoBehaviour:
   m_ObjectHideFlags: 1
