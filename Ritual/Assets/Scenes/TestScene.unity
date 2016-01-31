@@ -3192,6 +3192,10 @@ Prefab:
       propertyPath: rigidbodyFirstPersonController
       value: 
       objectReference: {fileID: 226691686}
+    - target: {fileID: 8215870, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7206c19e5f783e40a18205872ebf36d, type: 2}
   m_IsPrefabParent: 0
@@ -3533,6 +3537,10 @@ Prefab:
     - target: {fileID: 22408740, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435540, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e06d3a5a70a0b324f8f4f3e11943cc18, type: 2}

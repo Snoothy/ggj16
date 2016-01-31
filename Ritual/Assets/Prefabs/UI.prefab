@@ -114,7 +114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Summon the required items at your alchemy table
+  m_Text: Concoct literally anything at your alchemy table to complete your tasks
 --- !u!114 &11457078
 MonoBehaviour:
   m_ObjectHideFlags: 1
