@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adc06fa716b7e34d9dc3d50442eff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productName: Horse head
+  productName: Horse mask
 --- !u!212 &21273898
 SpriteRenderer:
   m_ObjectHideFlags: 1
