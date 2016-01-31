@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488136}
   - 114: {fileID: 11464028}
+  - 82: {fileID: 8256416}
   m_Layer: 0
   m_Name: CombinationTable
   m_TagString: Untagged
@@ -675,8 +676,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9619178, y: -0.44, z: -4.44}
+  m_LocalRotation: {x: 0, y: 0.9359461, z: 0, w: -0.3521434}
+  m_LocalPosition: {x: 8.71, y: -0.5999999, z: 10.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480896}
@@ -1257,6 +1258,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &8256416
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101140}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9549284
 Animator:
   serializedVersion: 3
@@ -1307,7 +1382,10 @@ MonoBehaviour:
   exitPoolParent: {fileID: 439520}
   postitwall: {fileID: 11473838}
   wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
-  correctAnswerClip: {fileID: 8300000, guid: 65623deb6cd381742a0160de12d66b85, type: 3}
+  onCorrectCombination: {fileID: 8300000, guid: 42998f9d298b3244d855a09c70d79ed9,
+    type: 3}
+  onIncorrectCombination: {fileID: 8300000, guid: d64eae69d3809d2429994dc6fa9f9184,
+    type: 3}
   combinations:
   - ingredients: 0400000002000000
     product: {fileID: 136470, guid: 86a448d1a8e6dc84896b32f0a9db4eca, type: 2}
