@@ -18,6 +18,7 @@ public class CombinationTable : MonoBehaviour {
     public Transform exitPoolParent;
     public Postitwall postitwall;
     public AudioClip wrongAnswerClip;
+    public AudioClip onAddItemToPool;
     public AudioClip onCorrectCombination;
     public AudioClip[] onIncorrectCombination;
 
@@ -187,6 +188,7 @@ public class CombinationTable : MonoBehaviour {
         {
             enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = false;
         }
+        this.GetComponent<AudioSource>().PlayOneShot(onAddItemToPool);
     }
 
     private void instantiateProduct(GameObject product)

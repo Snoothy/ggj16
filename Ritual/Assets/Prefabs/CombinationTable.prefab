@@ -1382,6 +1382,7 @@ MonoBehaviour:
   exitPoolParent: {fileID: 439520}
   postitwall: {fileID: 11473838}
   wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
+  onAddItemToPool: {fileID: 8300000, guid: 4945d2c80aa62a243af4d79334ef38b5, type: 3}
   onCorrectCombination: {fileID: 8300000, guid: 42998f9d298b3244d855a09c70d79ed9,
     type: 3}
   onIncorrectCombination:
