@@ -1091,7 +1091,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 404844, guid: 61128f7ba683c2b4a89fd49418ffae0a, type: 2}
       propertyPath: m_RootOrder
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61128f7ba683c2b4a89fd49418ffae0a, type: 2}
@@ -1986,6 +1986,10 @@ Prefab:
     - target: {fileID: 488136, guid: 1fe6018596d6fbb418ebfe7f32edb5e3, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256416, guid: 1fe6018596d6fbb418ebfe7f32edb5e3, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fe6018596d6fbb418ebfe7f32edb5e3, type: 2}
@@ -2903,7 +2907,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
 --- !u!1 &1567622004
 GameObject:
   m_ObjectHideFlags: 0
