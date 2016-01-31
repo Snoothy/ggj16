@@ -81,6 +81,7 @@ public class ObjectiveHandler : MonoBehaviour {
 		Debug.LogWarning ("Game complete");
 		endscreen.SetActive (true);
 		endscreen.GetComponent<TypeWriterTextAction> ().actionInfo.text = GenerateEndText();
+		Destroy (GameObject.FindGameObjectWithTag("UI"));
 		Destroy (player.GetComponent<FirstPersonController> ());
 	}
 
