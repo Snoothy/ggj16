@@ -176,11 +176,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3c3ff25712e4e48749b4c75d110ceeb6, type: 3}
-    m_FontSize: 36
+    m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 58
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
   resetOnDisable: 0
   resetOnFinish: 0
   actionInfo:
-    time: 38
+    time: 33
     text: What a marvelous wedding it was! You gave all the guests fabulous _hats_
       to wear, filling them with excitement. A _cake_,  filled with delicious cream,
       was prepared for everyone to enjoy. The pastor joined the couple in holy matrimony
