@@ -12,7 +12,7 @@ public class ObjectiveTracker : MonoBehaviour {
     public AudioClip wrongAnswerClip;
     public AudioClip correctAnswerClip;
 
-	bool completed = false;
+	protected bool completed = false;
 
 
 	// Use this for initialization
@@ -46,7 +46,6 @@ public class ObjectiveTracker : MonoBehaviour {
             }
 
             audioSource.PlayOneShot(correctAnswerClip, 0.3f);
-
         }
         else if (other.gameObject.GetComponent<Ingredient>() && !completed)
         {
@@ -70,7 +69,7 @@ public class ObjectiveTracker : MonoBehaviour {
 		RenestFirstSprite (other, attachPoint);
 	}
 
-	Transform RenestFirstSprite(Transform product, Transform parent){
+	protected Transform RenestFirstSprite(Transform product, Transform parent){
 		//Transform sprite = product.FindChild ("MeshParent").GetChild (0);
 		Transform sprite = product;
 		sprite.parent = parent;
