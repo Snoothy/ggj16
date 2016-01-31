@@ -19,7 +19,7 @@ public class SoundOnHit : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if (other.transform.tag != "GrabFix" && other.transform.tag != "Player"  && !audio.isPlaying && !firstPlay) {
 			Debug.Log (other.transform.name);
-
+			audio.pitch = Random.Range (0.7f, 1.3f);
 			audio.Play ();
 		}
 		firstPlay = false;

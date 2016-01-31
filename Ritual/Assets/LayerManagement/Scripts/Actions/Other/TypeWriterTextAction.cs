@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace LayerManagement.Action.Finite
 {
@@ -8,7 +9,7 @@ namespace LayerManagement.Action.Finite
         public float time = 0.0f;
         [TextArea(4,10)]
         public string text;
-        public TextMesh textMesh;
+        public Text textMesh;
         [Range(0.0f, 1.0f)]
         public float delay = 0.0f;
 
@@ -25,7 +26,7 @@ namespace LayerManagement.Action.Finite
 
         }
 
-        public TypeWriterTextActionInfo(float time, string text, TextMesh textMesh, float delay)
+        public TypeWriterTextActionInfo(float time, string text, Text textMesh, float delay)
         {
             this.time = time;
             this.text = text;

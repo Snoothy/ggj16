@@ -8,6 +8,7 @@ TagManager:
   - UI
   - Product
   - GrabFix
+  - EndScreen
   layers:
   - Default
   - TransparentFX

@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using LayerManagement.Action.Finite;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class ObjectiveHandler : MonoBehaviour {
 
 	public enum Objectives {CAKE, HATS, RICE, BOUQUET, RING, BOOK};
-
+	GameObject endscreen, player;
 	Text objText;
 
 	struct Objective {
@@ -35,13 +37,18 @@ public class ObjectiveHandler : MonoBehaviour {
 
 		objText = transform.FindChild ("Objectives").GetComponent<Text> ();
 		UpdateObjectives ();
+
+		endscreen = GameObject.FindGameObjectWithTag ("EndScreen");
+		player = GameObject.FindGameObjectWithTag ("Player");
+		endscreen.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//if (Input.GetKeyDown ("a")) {
+		if (Input.GetKeyDown ("a")) {
 			//Debug.Log (GenerateEndText());
-		//}
+			OnCompleteGame();
+		}
 	}
 
 	string GenerateEndText(){
@@ -53,7 +60,7 @@ public class ObjectiveHandler : MonoBehaviour {
 		olist.TryGetValue (Objectives.RICE, out rice);
 		olist.TryGetValue (Objectives.BOUQUET, out bouquet);
 
-		string s = string.Format ("What a marvelous wedding it was! You gave all the guests fabulous {0}s to wear, filling them with excitement. A {1}, filled with delicious cream, was prepared for everyone to enjoy. The pastor joined the couple in holy matrimony with verses from the {2} and {3}s was exchanged followed by a kiss. The guests cheerfully threw {4} at the couple as they left the church. As a final act, the bride threw the {5} into the crowd as of tradition.",
+		string s = string.Format ("What a marvelous wedding it was! You gave all the guests fabulous {0}s to wear, filling them with excitement. A {1}, filled with delicious cream, was prepared for everyone to enjoy. The pastor joined the couple in holy matrimony with verses from the {2} and {3}s was exchanged followed by a kiss. The guests cheerfully threw {4} at the couple as they left the church and as a final act, the bride threw the {5} into the crowd as of tradition.",
 			hat.objectName, cake.objectName, book.objectName, ring.objectName, rice.objectName, bouquet.objectName);
 
 		return s;
@@ -72,6 +79,9 @@ public class ObjectiveHandler : MonoBehaviour {
 
 	void OnCompleteGame(){
 		Debug.LogWarning ("Game complete");
+		endscreen.SetActive (true);
+		endscreen.GetComponent<TypeWriterTextAction> ().actionInfo.text = GenerateEndText();
+		Destroy (player.GetComponent<FirstPersonController> ());
 	}
 
 	void UpdateObjectives(){
