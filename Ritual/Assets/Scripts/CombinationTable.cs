@@ -18,7 +18,8 @@ public class CombinationTable : MonoBehaviour {
     public Transform exitPoolParent;
     public Postitwall postitwall;
     public AudioClip wrongAnswerClip;
-    public AudioClip correctAnswerClip;
+    public AudioClip onCorrectCombination;
+    public AudioClip onIncorrectCombination;
 
     public List<Combination> combinations = new List<Combination>();
     public List<Product> badproducts = new List<Product>();
@@ -78,6 +79,7 @@ public class CombinationTable : MonoBehaviour {
                 instantiateProduct(product);
                 postitwall.Clear();
                 enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
+                this.GetComponent<AudioSource>().PlayOneShot(onCorrectCombination);
             }
             else if (noIngredients == 3)
             {
@@ -87,6 +89,7 @@ public class CombinationTable : MonoBehaviour {
                 Debug.LogWarning("No combination was found");
                 instantiateProduct(this.getBadProduct());
                 enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
+                this.GetComponent<AudioSource>().PlayOneShot(onIncorrectCombination);
             }
             return true;
         }
@@ -188,8 +191,6 @@ public class CombinationTable : MonoBehaviour {
 
     private void instantiateProduct(GameObject product)
     {
-        exitPoolParent.GetComponent<AudioSource>().PlayOneShot(correctAnswerClip);
-
         Debug.LogWarning("new product" + product.name);
         placeProduct(Instantiate(product));
     }
