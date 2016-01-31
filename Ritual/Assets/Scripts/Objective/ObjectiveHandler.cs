@@ -60,8 +60,10 @@ public class ObjectiveHandler : MonoBehaviour {
 		olist.TryGetValue (Objectives.RICE, out rice);
 		olist.TryGetValue (Objectives.BOUQUET, out bouquet);
 
+		string extraS = (rice.objectName == "rice") ? "" : "s";
+
 		string s = string.Format ("What a marvelous wedding it was! You gave all the guests fabulous {0}s to wear, filling them with excitement. A {1}, filled with delicious cream, was prepared for everyone to enjoy. The pastor joined the couple in holy matrimony with verses from the {2} and {3}s was exchanged followed by a kiss. The guests cheerfully threw {4} at the couple as they left the church and as a final act, the bride threw the {5} into the crowd as of tradition.",
-			hat.objectName, cake.objectName, book.objectName, ring.objectName, rice.objectName, bouquet.objectName);
+			hat.objectName, cake.objectName, book.objectName, ring.objectName, rice.objectName + extraS, bouquet.objectName);
 
 		return s;
 	}
