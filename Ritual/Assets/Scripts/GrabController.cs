@@ -54,7 +54,10 @@ public class GrabController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyUp (KeyCode.Mouse0) && grabbed) {
+            GameObject obj = grabbedObject;
 			StopGrab ();
+
+            obj.GetComponent<Rigidbody>().AddForce(Vector3.Scale(Camera.main.transform.forward, new Vector3(2.5f,2.5f,2.5f)), ForceMode.Impulse);
 		}
 
 		if (grabbed) {
