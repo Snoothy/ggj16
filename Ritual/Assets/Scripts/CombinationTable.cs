@@ -19,7 +19,7 @@ public class CombinationTable : MonoBehaviour {
     public Postitwall postitwall;
     public AudioClip wrongAnswerClip;
     public AudioClip onCorrectCombination;
-    public AudioClip onIncorrectCombination;
+    public AudioClip[] onIncorrectCombination;
 
     public List<Combination> combinations = new List<Combination>();
     public List<Product> badproducts = new List<Product>();
@@ -89,7 +89,7 @@ public class CombinationTable : MonoBehaviour {
                 Debug.LogWarning("No combination was found");
                 instantiateProduct(this.getBadProduct());
                 enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
-                this.GetComponent<AudioSource>().PlayOneShot(onIncorrectCombination);
+                this.GetComponent<AudioSource>().PlayOneShot(onIncorrectCombination[Random.Range(0, onIncorrectCombination.Length)]);
             }
             return true;
         }

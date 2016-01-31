@@ -1384,8 +1384,11 @@ MonoBehaviour:
   wrongAnswerClip: {fileID: 8300000, guid: c09284d041013fd44860c8a10e6993cf, type: 3}
   onCorrectCombination: {fileID: 8300000, guid: 42998f9d298b3244d855a09c70d79ed9,
     type: 3}
-  onIncorrectCombination: {fileID: 8300000, guid: d64eae69d3809d2429994dc6fa9f9184,
-    type: 3}
+  onIncorrectCombination:
+  - {fileID: 8300000, guid: d8e6b4e63a22bbe4d9bba1693b2de49e, type: 3}
+  - {fileID: 8300000, guid: 10b4eb5e6b3dac149b6356cc10bb6414, type: 3}
+  - {fileID: 8300000, guid: 7b238e5d38ab8064fb653e7939c9ef34, type: 3}
+  - {fileID: 8300000, guid: e7d014c67b0611945a6ab317aa7be1c7, type: 3}
   combinations:
   - ingredients: 0400000002000000
     product: {fileID: 136470, guid: 86a448d1a8e6dc84896b32f0a9db4eca, type: 2}
