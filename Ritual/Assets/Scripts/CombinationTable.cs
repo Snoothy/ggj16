@@ -221,6 +221,8 @@ public class CombinationTable : MonoBehaviour {
         ScaleToByTime scale = product.gameObject.AddComponent<ScaleToByTime>();
         scale.delegates += a =>
         {
+            product.GetComponent<AudioSource>().Play();
+
             product.gameObject.AddComponent<Rigidbody>();
             product.GetComponent<Collider>().enabled = true;
             product.transform.parent = null;
