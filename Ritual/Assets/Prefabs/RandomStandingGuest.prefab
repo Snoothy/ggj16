@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0426ce624de83740bf25c2e65be7ef9, type: 3}
   - {fileID: 21300000, guid: cf9a570cedc194840bfefa24e00aeeec, type: 3}
   - {fileID: 21300000, guid: f7eacbedfe274ab44a8063467d399ea6, type: 3}
-  - {fileID: 21300000, guid: d48f46b4746b04841b4fae6ef8dfbec5, type: 3}
+  - {fileID: 21300000, guid: b3dd552288b302045a34b5d55d6d6934, type: 3}
   - {fileID: 21300000, guid: 8129c7ca586828d4d87d244dd6a2bf7f, type: 3}
   - {fileID: 21300000, guid: b3dd552288b302045a34b5d55d6d6934, type: 3}
   - {fileID: 21300000, guid: b242850a40395644fa1c6962486fd400, type: 3}
@@ -318,7 +318,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: allSprites.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: 98b9557cebc8a6d4baefe70886cb929d,
+      objectReference: {fileID: 21300000, guid: b3dd552288b302045a34b5d55d6d6934,
         type: 3}
     - target: {fileID: 0}
       propertyPath: allSprites.Array.data[9]
