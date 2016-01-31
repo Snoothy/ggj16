@@ -8712,9 +8712,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 146888, guid: ed7a88e98fdc99342ba51711a1a26399, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 11422870, guid: ed7a88e98fdc99342ba51711a1a26399, type: 2}
+      propertyPath: m_Color.r
+      value: 0.47794116
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422870, guid: ed7a88e98fdc99342ba51711a1a26399, type: 2}
+      propertyPath: m_Color.g
+      value: 0.33596453
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422870, guid: ed7a88e98fdc99342ba51711a1a26399, type: 2}
+      propertyPath: m_Color.b
+      value: 0.122999564
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed7a88e98fdc99342ba51711a1a26399, type: 2}
@@ -10479,7 +10487,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0137f895f6f143e42a8582b58c127a6e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.9
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11198,7 +11206,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1716401454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.219, y: 1.164, z: -0.565}
+  m_LocalPosition: {x: -0.219, y: 1.11, z: -0.565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 660254067}
