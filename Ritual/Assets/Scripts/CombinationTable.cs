@@ -80,7 +80,7 @@ public class CombinationTable : MonoBehaviour {
                 instantiateProduct(product);
                 postitwall.Clear();
                 enterPoolParent.GetComponentInChildren<EnterPool>().GetComponent<MeshCollider>().enabled = true;
-                this.GetComponent<AudioSource>().PlayOneShot(onCorrectCombination);
+                this.GetComponent<AudioSource>().PlayOneShot(onCorrectCombination, 0.8f);
             }
             else if (noIngredients == 3)
             {
@@ -134,7 +134,7 @@ public class CombinationTable : MonoBehaviour {
             audioSource = item.gameObject.AddComponent<AudioSource>();
         }
 
-        audioSource.PlayOneShot(wrongAnswerClip, 0.3f);
+        audioSource.PlayOneShot(wrongAnswerClip, 0.75f);
     }
 
     public void animateEnter (Item item)
