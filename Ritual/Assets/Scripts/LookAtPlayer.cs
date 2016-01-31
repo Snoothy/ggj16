@@ -16,6 +16,6 @@ public class LookAtPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Quaternion q = Quaternion.LookRotation (t.position - player.position);
-		t.rotation = Quaternion.Euler(new Vector3(0f, q.eulerAngles.y + offset, 0f));
+		t.rotation = Quaternion.Euler(new Vector3(0f, q.eulerAngles.y + offset+180f, 0f));
 	}
 }
