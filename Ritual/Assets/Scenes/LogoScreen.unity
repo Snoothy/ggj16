@@ -383,6 +383,7 @@ GameObject:
   - 223: {fileID: 1545731072}
   - 114: {fileID: 1545731071}
   - 114: {fileID: 1545731070}
+  - 114: {fileID: 1545731075}
   - 114: {fileID: 1545731074}
   m_Layer: 5
   m_Name: Canvas
@@ -474,10 +475,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1545731069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af09d27cb885454e80bcb11ec32d70e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b9423a46be5a124dba9565b2df7bf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: GameSplash
+--- !u!114 &1545731075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545731069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a3fcddab5947018aba640c096e4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  actionSpeed: 1
+  runActionOnStart: 1
+  resetOnDisable: 0
+  resetOnFinish: 0
+  actionInfo:
+    time: 3
 --- !u!1 &1634640928
 GameObject:
   m_ObjectHideFlags: 0
