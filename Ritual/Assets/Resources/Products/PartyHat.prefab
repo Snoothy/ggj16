@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11472182}
   - 82: {fileID: 8226036}
   - 114: {fileID: 11491756}
+  - 114: {fileID: 114000013073713036}
   m_Layer: 0
   m_Name: PartyHat
   m_TagString: Product
@@ -65,6 +66,7 @@ Transform:
   - {fileID: 485574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &485574
 Transform:
   m_ObjectHideFlags: 1
@@ -78,6 +80,7 @@ Transform:
   - {fileID: 495162}
   m_Father: {fileID: 440214}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &495162
 Transform:
   m_ObjectHideFlags: 1
@@ -90,6 +93,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 485574}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5433762
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -214,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407876aa01f2fdd4a9f9259d48aafba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0
 --- !u!114 &11491756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,13 +239,14 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -266,3 +272,28 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139500}
   m_IsPrefabParent: 1
+--- !u!114 &114000013073713036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnTouch: 0
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  pauseCollisionsOnGrab: 1
+  grabSnapType: 2
+  snapToRotation: {x: 0, y: 0, z: 0}
+  grabAttatchMechanic: 0
+  detatchThreshold: 500
+  springJointStrength: 500
+  springJointDamper: 50
+  isUsable: 0
+  holdButtonToUse: 1
+  pointerActivatesUseAction: 0

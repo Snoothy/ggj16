@@ -123,10 +123,10 @@ public class CombinationTable : MonoBehaviour {
     public void OnEnterCollision(Product item)
     {
         GrabController grabController = GameObject.FindObjectOfType<GrabController>();
-        if (grabController.getGrabbedObject() == item.gameObject)
-        {
-            grabController.StopGrab();
-        }
+        //if (grabController.getGrabbedObject() == item.gameObject)
+        //{
+        //    grabController.StopGrab();
+        //}
         item.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(new Vector3(5, 5, 5), enterPoolParent.transform.position, ForceMode.Impulse);
         AudioSource audioSource = item.gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
@@ -140,10 +140,10 @@ public class CombinationTable : MonoBehaviour {
     public void animateEnter (Item item)
     {
         GrabController grabController = GameObject.FindObjectOfType<GrabController>();
-        if (grabController.getGrabbedObject() == item.gameObject)
-        {
-            grabController.StopGrab();
-        }
+        //if (grabController.getGrabbedObject() == item.gameObject)
+        //{
+        //    grabController.StopGrab();
+        //}
 
         Destroy(item.GetComponent<Rigidbody>());
         item.GetComponent<Collider>().enabled = false;
